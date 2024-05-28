@@ -12,6 +12,7 @@ import { Box, Card, Container, Tab, Tabs } from "@mui/material";
 import { capitalCase } from "change-case"; //this library for solving probmlem with string
 import ProfileCover from "../features/user/ProfileCover";
 import { styled } from "@mui/material/styles";
+import SentRequestList from "../features/friend/SentRequestList";
 
 const TabsWrapperStyle = styled("div")(({ theme }) => ({
   zIndex: 9,
@@ -45,10 +46,16 @@ function HomePage() {
       component: <FriendList />,
     },
     {
-      value: "requests",
+      value: "incoming_requests",
       icon: <ContactMailIcon sx={{ fontSize: 24 }} />,
       component: <FriendRequests />,
     },
+    {
+      value: "outgoing_requests",
+      icon: <ContactMailIcon sx={{ fontSize: 24 }} />,
+      component: <SentRequestList />,
+    },
+
     {
       value: "add_friend",
       icon: <PersonAddRoundedIcon sx={{ fontSize: 24 }} />,
